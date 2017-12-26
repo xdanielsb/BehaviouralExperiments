@@ -13,8 +13,10 @@ Your app description
 
 class Constants(BaseConstants):
     name_in_url = 'public'
-    players_per_group = None
+    players_per_group = 3
     num_rounds = 1
+    endowment = c(100)
+    multiplier = 2
 
 
 class Subsession(BaseSubsession):
@@ -22,8 +24,16 @@ class Subsession(BaseSubsession):
 
 
 class Group(BaseGroup):
-    pass
+    total_contribution = models.CurrencyField()
+    individual_share = models.CurrencyField()
 
+    def set_payoffs(self):
+        players = self.get_players()
+        contributions = [p.contribution for p in players]
+        self.total_contribution = sum(contributions)
+        self.individual_share = self.total_contribution * Constants.multiplier / Constants.players_per_group
+        for p in self.get_players():
+            p.payoff = Constants.endowment - p.contribution + self.individual_share
 
 class Player(BasePlayer):
-    pass
+    contribution = models.CurrencyField(min=0, max=Constants.endowment)
