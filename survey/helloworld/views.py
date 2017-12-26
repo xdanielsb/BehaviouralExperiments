@@ -5,8 +5,8 @@ from .models import Constants
 
 
 class MyPage(Page):
-    pass
-
+    form_model = models.Player
+    form_fields = ['name', 'age']
 
 class ResultsWaitPage(WaitPage):
 
@@ -20,6 +20,5 @@ class Results(Page):
 
 page_sequence = [
     MyPage,
-    ResultsWaitPage,
     Results
 ]
