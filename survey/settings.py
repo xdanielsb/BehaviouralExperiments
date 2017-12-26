@@ -101,10 +101,10 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
-        'name': 'survey',
+        'name': 'helloworld',
         'display_name': "My Simple Survey",
         'num_demo_participants': 2,
-        'app_sequence': ['survey'],
+        'app_sequence': ['helloworld'],
     },
 ]
 
