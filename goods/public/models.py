@@ -27,8 +27,10 @@ class Subsession(BaseSubsession):
 class Group(BaseGroup):
     total_contribution = models.CurrencyField()
     individual_share = models.CurrencyField()
+    print("#############################################group")
 
     def set_payoffs(self):
+        print("#############################################payoff")
         players = self.get_players()
         contributions = [p.contribution for p in players]
         self.total_contribution = sum(contributions)
@@ -38,4 +40,5 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    print("#############################################base player")
     contribution = models.CurrencyField(min=0, max=Constants.endowment)
