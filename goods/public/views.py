@@ -4,8 +4,10 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-class MyPage(Page):
-    pass
+
+class Contribute(Page):
+    form_model = models.Player
+    form_fields = ['contribution']
 
 
 class ResultsWaitPage(WaitPage):
@@ -19,7 +21,7 @@ class Results(Page):
 
 
 page_sequence = [
-    MyPage,
+    Contribute,
     ResultsWaitPage,
     Results
 ]
