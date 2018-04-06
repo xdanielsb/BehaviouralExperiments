@@ -12,12 +12,12 @@ SESSION_CONFIG_DEFAULTS = {
 }
 
 SESSION_CONFIGS = [
-    #{
-    #    'name': 'public_goods',
-    #    'display_name': "Public Goods",
-    #    'num_demo_participants': 3,
-    #    'app_sequence': ['public_goods', 'payment_info'],
-    #},
+    {
+        'name': 'game',
+        'display_name': "Trust in Daniel Game",
+        'num_demo_participants': 2,
+        'app_sequence': ['game'],
+    },
 ]
 
 
