@@ -11,7 +11,7 @@ class VReceiveContributions(Page):
 class ResultsWaitPage(WaitPage):
     
     def after_all_players_arrive(self):
-        group = self.group 
+        self.group.calculate_pay_offs()
 
 
 class VShowResults(Page):
