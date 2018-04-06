@@ -17,6 +17,7 @@ SESSION_CONFIGS = [
        'display_name': "Contribution Game",
        'num_demo_participants': 3,
        'app_sequence': ['contribute'],
+       'use_browser_bots': True,
     },
 ]
 
