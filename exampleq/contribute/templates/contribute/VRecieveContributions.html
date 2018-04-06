@@ -2,11 +2,17 @@
 {% load otree static %}
 
 {% block title %}
-    Page title
+    Receive Contribution
 {% endblock %}
 
 {% block content %}
+    <p>
+        This group has in total:  {{ Constants.players_per_group }} <br>
+        Total Endowment is : {{ Constants.endowment }} <br>
+        The combined contributions is going to be multiplied by {{ Constants.multiplier }} and divide equally by the number of participants. <br>
+    </p>
+
+    {% formfield player.contribution label="How much will you contribute"%}
 
     {% next_button %}
-
 {% endblock %}

@@ -2,11 +2,18 @@
 {% load otree static %}
 
 {% block title %}
-    Page title
+    Results Page
 {% endblock %}
 
 {% block content %}
-
+    <p>
+        You started with and endowment of {{ Constants.endowment }},
+        of which you contributed {{ player.contribution }} <br>
+        Your Group contributed {{ group.total_contribution }},
+        resulting in an individual share of {{ group.individual_share }}. <br>
+        Your profit is therefore {{ player.payoff }}
+    </p>
+    
     {% next_button %}
 {% endblock %}
 
