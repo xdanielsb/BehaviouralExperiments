@@ -3,22 +3,24 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-class MyPage(Page):
-    pass
+class VReceiveContributions(Page):
+    form_model = 'player'
+    form_fields = ['contribution']
 
 
 class ResultsWaitPage(WaitPage):
+    
 
     def after_all_players_arrive(self):
         pass
 
 
-class Results(Page):
+class VShowResults(Page):
     pass
 
 
 page_sequence = [
-    MyPage,
+    VReceiveContributions,
     ResultsWaitPage,
-    Results
+    VShowResults
 ]
