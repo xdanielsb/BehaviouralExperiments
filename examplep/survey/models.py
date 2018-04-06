@@ -26,4 +26,6 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+    name = models.StringField()
+    age = models.IntegerField()
+    

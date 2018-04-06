@@ -2,11 +2,13 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Page title
+    Introduction
 {% endblock %}
 
 {% block content %}
-
+    
+    {% formfield player.name label= "Enter your name please"}
+    {% formfield player.age label="Enter your age please"}
     {% next_button %}
 
 {% endblock %}
