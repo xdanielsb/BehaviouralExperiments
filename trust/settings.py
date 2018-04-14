@@ -1,4 +1,7 @@
 from os import environ
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.
@@ -60,3 +63,11 @@ SECRET_KEY = '58vovq&l5$k-!(ig@e_8=nu(2)=!3kiqk7w%=6yq=zcaqg4smx'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
 INSTALLED_APPS = ['otree']
+
+# database
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
